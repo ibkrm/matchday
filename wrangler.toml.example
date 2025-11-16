@@ -1,0 +1,19 @@
+name = "matchday"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Pages configuration
+pages_build_output_dir = ".next"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "matchday-db"
+database_id = "your-database-id-here"  # Get from: npx wrangler d1 create matchday-db
+
+# Environment variables
+[vars]
+NEXT_PUBLIC_APP_URL = "https://matchday.pages.dev"
+
+# Production environment
+[env.production.vars]
+NEXT_PUBLIC_APP_URL = "https://your-domain.com"
