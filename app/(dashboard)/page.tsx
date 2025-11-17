@@ -5,17 +5,19 @@ import { Trophy, Users, Calendar, TrendingUp } from "lucide-react";
 export default function DashboardPage() {
   return (
     <div className="p-8 space-y-8">
-      {/* Hero Section */}
-      <div>
-        <h1 className="font-display text-5xl mb-2">SEASON 2024-25</h1>
+      {/* Hero Section with gradient */}
+      <div className="gradient-mesh rounded-lg p-8 -m-8 mb-0 animate-in">
+        <h1 className="font-display text-6xl mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          SEASON 2024-25
+        </h1>
         <p className="text-muted-foreground text-lg">
           Your complete soccer league management platform
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="border-l-4 border-l-primary">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-in">
+        <Card className="stat-card border-l-4 border-l-primary card-hover" style={{ color: 'hsl(var(--primary))' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Leagues</CardTitle>
             <Trophy className="h-4 w-4 text-muted-foreground" />
@@ -28,7 +30,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-l-4 border-l-accent">
+        <Card className="stat-card border-l-4 border-l-accent card-hover" style={{ color: 'hsl(var(--accent))' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Teams</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -41,7 +43,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-l-4 border-l-chart-3">
+        <Card className="stat-card border-l-4 border-l-chart-3 card-hover" style={{ color: 'hsl(var(--chart-3))' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Matches Played</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" />
@@ -54,7 +56,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-l-4 border-l-chart-4">
+        <Card className="stat-card border-l-4 border-l-chart-4 card-hover" style={{ color: 'hsl(var(--chart-4))' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Goals</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
