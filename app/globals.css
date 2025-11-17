@@ -49,47 +49,47 @@
   }
 
   .dark {
-    /* Warmer dark backgrounds - less blue, more neutral */
-    --background: 220 13% 10%;
-    --foreground: 0 0% 95%;
+    /* Much lighter dark mode for better visibility */
+    --background: 220 13% 18%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 13% 15%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 13% 22%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 13% 13%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 13% 20%;
+    --popover-foreground: 0 0% 98%;
 
     /* Brighter green for dark mode */
-    --primary: 152 70% 40%;
+    --primary: 152 70% 45%;
     --primary-foreground: 0 0% 98%;
 
-    /* Slightly muted yellow for dark mode */
-    --accent: 45 95% 55%;
+    /* Bright yellow for dark mode */
+    --accent: 45 95% 60%;
     --accent-foreground: 0 0% 10%;
 
-    --secondary: 220 13% 20%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 13% 28%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 13% 22%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 13% 30%;
+    --muted-foreground: 0 0% 70%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 25%;
-    --input: 220 13% 20%;
-    --ring: 152 70% 40%;
+    --border: 220 13% 35%;
+    --input: 220 13% 28%;
+    --ring: 152 70% 45%;
 
     /* Chart colors - adjusted for dark mode */
-    --chart-1: 152 70% 45%;
-    --chart-2: 45 95% 60%;
-    --chart-3: 217 91% 65%;
-    --chart-4: 0 84% 65%;
-    --chart-5: 262 83% 65%;
+    --chart-1: 152 70% 50%;
+    --chart-2: 45 95% 65%;
+    --chart-3: 217 91% 70%;
+    --chart-4: 0 84% 70%;
+    --chart-5: 262 83% 70%;
 
-    --win: 142 71% 50%;
-    --draw: 38 92% 55%;
-    --loss: 0 72% 56%;
+    --win: 142 71% 55%;
+    --draw: 38 92% 60%;
+    --loss: 0 72% 60%;
   }
 }
 
