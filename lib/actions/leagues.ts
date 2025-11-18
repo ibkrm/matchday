@@ -11,13 +11,21 @@ import { eq } from "drizzle-orm";
 export async function createLeague(data: LeagueFormData) {
   try {
     const validated = leagueSchema.parse(data);
-    
+
     const [league] = await db.insert(leagues).values(validated).returning();
-    
+
     revalidatePath("/leagues");
     return { success: true, data: league };
   } catch (error) {
     console.error("Failed to create league:", error);
+
+    // Handle Zod validation errors
+    if (error && typeof error === 'object' && 'errors' in error) {
+      const zodError = error as { errors: Array<{ path: Array<string | number>, message: string }> };
+      const errorMessages = zodError.errors.map(e => e.message).join(', ');
+      return { success: false, error: errorMessages };
+    }
+
     return { success: false, error: "Failed to create league" };
   }
 }
@@ -25,18 +33,26 @@ export async function createLeague(data: LeagueFormData) {
 export async function updateLeague(id: number, data: LeagueFormData) {
   try {
     const validated = leagueSchema.parse(data);
-    
+
     const [league] = await db
       .update(leagues)
       .set({ ...validated, updatedAt: new Date().toISOString() })
       .where(eq(leagues.id, id))
       .returning();
-    
+
     revalidatePath("/leagues");
     revalidatePath(`/leagues/${id}`);
     return { success: true, data: league };
   } catch (error) {
     console.error("Failed to update league:", error);
+
+    // Handle Zod validation errors
+    if (error && typeof error === 'object' && 'errors' in error) {
+      const zodError = error as { errors: Array<{ path: Array<string | number>, message: string }> };
+      const errorMessages = zodError.errors.map(e => e.message).join(', ');
+      return { success: false, error: errorMessages };
+    }
+
     return { success: false, error: "Failed to update league" };
   }
 }

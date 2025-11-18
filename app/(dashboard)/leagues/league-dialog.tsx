@@ -113,9 +113,12 @@ export function LeagueDialog({ children, league }: LeagueDialogProps) {
                   id="season"
                   name="season"
                   placeholder="2024-25"
+                  pattern="^\d{4}-\d{2}$"
+                  title="Season must be in format YYYY-YY (e.g., 2024-25)"
                   defaultValue={league?.season}
                   required
                 />
+                <p className="text-xs text-muted-foreground">Format: YYYY-YY (e.g., 2024-25)</p>
               </div>
 
               <div className="grid gap-2">
